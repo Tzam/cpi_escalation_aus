@@ -1,8 +1,0 @@
-README.md
-setup.py
-cpi_escalation_aus/__init__.py
-cpi_escalation_aus/cpi_esc.py
-cpi_escalation_aus_tzam.egg-info/PKG-INFO
-cpi_escalation_aus_tzam.egg-info/SOURCES.txt
-cpi_escalation_aus_tzam.egg-info/dependency_links.txt
-cpi_escalation_aus_tzam.egg-info/top_level.txt
