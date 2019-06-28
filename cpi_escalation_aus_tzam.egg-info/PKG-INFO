@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: cpi-escalation-aus-tzam
+Version: 0.0.1
+Summary: Australian CPI escalation tool
+Home-page: https://github.com/Tzam/cpi_escalation_aus
+Author: Samuel Hyland
+Author-email: sam.copycat@gmail.com
+License: UNKNOWN
+Description: # cpi_escalation_aus
+        Class to escalate and deescalate Australian dollar values based on ABS CPI index
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
