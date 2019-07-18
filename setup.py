@@ -13,6 +13,12 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Tzam/cpi_escalation_aus",
     packages=setuptools.find_packages(),
+    install_requires=[
+    'numpy',
+    'pandas',
+    'datetime',
+    'pathlib',
+   ]
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
