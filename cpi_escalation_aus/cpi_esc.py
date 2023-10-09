@@ -25,17 +25,17 @@ class CpiEscalator():
                            )
         except:
             raise ValueError('cpidata should be a pandas datafame with 2 columns, one with datetimes and the other numeric')
-        
+
         self._minrefdate = self.cpidata['Date'].min()
         self._maxrefdate = self.cpidata['Date'].max()
         self._default_esc = future_escalation
         self.allow_estimation = allow_estimation
-        
+
         #convert target date to a date type
         if not target_date:
-            target_date = datetime.datetime.today()
+            target_date = datetime.datetime.now()
         self.set_target_date(target_date)
-        
+
         #factors are expressed so that nominal * factor -> real
         self._recalculate_cpi_factors()
         
@@ -78,8 +78,7 @@ class CpiEscalator():
     def _get_estimated_esc(self, outside_dates,refdate):
         yrsahead = outside_dates.sub(refdate).map(lambda td: td.days / 365.25).to_numpy()
         refcpi= self.cpidata['cpi_esc_factor'][self.cpidata['Date']==refdate].to_numpy()
-        outside_factors = np.array(np.power(self._default_esc,-yrsahead)*refcpi)
-        return outside_factors
+        return np.array(np.power(self._default_esc,-yrsahead)*refcpi)
     
     @classmethod
     def from_csv(cls, path = None, target_date: datetime.datetime = None, future_escalation:float = 1.025,
